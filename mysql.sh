@@ -52,10 +52,12 @@ EOF
   fi
 
   if [ "$MYSQL_DAEMONIZE" == "true" ]; then 
+    echo "[i] Running MySQL as daemon"
     /usr/share/mysql/mysql.server start 
     mysql -uroot < $tfile
   else 
-    exec /usr/bin/mysqld --user=root --bootstrap --console --verbose=0 < $tfile 
+    echo "[i] Running MySQL as non-daemon"
+    /usr/bin/mysqld --user=root --bootstrap --console --verbose=0 < $tfile 
   fi
 
   # rm -f $tfile
@@ -64,7 +66,9 @@ EOF
 fi
 
 if [ "$MYSQL_DAEMONIZE" == "true" ]; then 
+    echo "[i] Running MySQL as daemon"
   /usr/share/mysql/mysql.server start
 else 
+    echo "[i] Running MySQL as non-daemon"
   exec /usr/bin/mysqld --user=root --console 
 fi
