@@ -15,4 +15,4 @@ COPY mysql.sh /bin/mysql-start
 RUN chmod +x /bin/mysql-start
 
 # Expose port for mysql usage.
-EXPOSE 5880
+EXPOSE 3306
