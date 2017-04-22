@@ -14,5 +14,7 @@ COPY mysql.cnf /etc/mysql/my.cnf
 COPY mysql.sh /bin/mysql-start
 RUN chmod +x /bin/mysql-start
 
+ENV MYSQL_PORT 3306
+
 # Expose port for mysql usage.
 EXPOSE 3306

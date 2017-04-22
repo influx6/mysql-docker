@@ -57,7 +57,7 @@ EOF
     mysql -uroot < $tfile
   else 
     echo "[i] Running MySQL as non-daemon"
-    /usr/bin/mysqld --user=root --bootstrap --console --verbose=0 < $tfile 
+    /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile 
   fi
 
   # rm -f $tfile
