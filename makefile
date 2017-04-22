@@ -1,5 +1,5 @@
 build:
-	docker build -t $(USER)/mysql-alpine-setup ./
+	docker build -t $(USER)/mysql-alpine ./
 
 clean:
-	docker rmi $(USER)/mysql-alpine-setup
+	docker rmi $(USER)/mysql-alpine
